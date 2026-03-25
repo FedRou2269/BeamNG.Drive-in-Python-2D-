@@ -1,0 +1,3 @@
+Note: It is important to download libraries for the python file to work, such as: 
+pygame
+pymunk
