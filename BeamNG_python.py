@@ -73,7 +73,7 @@ static = space.static_body
 ground = pymunk.Segment(static, (-2000, 420), (5000, 420), 20)
 ground.friction = 1.0
 ground.color = (100, 100, 100, 255)
-# Стены (теперь это толстые сегменты по 50 пикселей)
+# Стены
 wall_r = pymunk.Segment(static, (1600, 0), (1600, 420), 50)
 wall_l = pymunk.Segment(static, (-800, 0), (-800, 420), 50)
 wall_r.friction = wall_l.friction = 1.0
@@ -93,7 +93,7 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: exit()
 
-    # ТВОЕ УПРАВЛЕНИЕ
+    # УПРАВЛЕНИЕ
     keys = pygame.key.get_pressed()
     is_touch = pygame.mouse.get_pressed()[0]
     mx = pygame.mouse.get_pos()[0]
@@ -129,7 +129,7 @@ while True:
 
     # --- 3. РИСУЕМ ФОРМЫ (КОЛЕСА И СТЕНЫ) ---
     draw_options = pymunk.pygame_util.DrawOptions(screen)
-    # DRAW_SHAPES рисует и круги, и сегменты (наши стены)
+    # DRAW_SHAPES рисует и круги, и сегменты (стены)
     draw_options.flags = pymunk.pygame_util.DrawOptions.DRAW_SHAPES
     from pymunk import Transform
     draw_options.transform = Transform(tx=-cam_x, ty=0)
